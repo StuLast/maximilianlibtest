@@ -47,6 +47,7 @@ Full details of all lib paths included in project can be read from the .jucer fi
 
 - The structure of the Maximilian repo has changed since the video was released in Oct 2017.  However, all the components seem to still be available.
 
+- This issue has been flagged on the Maximilian Repo and has an active solution proposal and pull request and accepted for .  Visit https://github.com/micknoise/Maximilian/issues/88 for more info.
 
 - maximilian.embind.cpp was also removed from the project as this was causing an error (Severity	Code	Description	Project	File	Line	Suppression State
 Error	C1083	Cannot open include file: 'emscripten.h': No such file or directory	MaximilianLibTest_App	C:\libraries\Maximilian\src\maximilian.embind.cpp	7	
@@ -74,7 +75,7 @@ But in order to follow along with the tutorial, the following changes are recomm
 replace line 1071 (void maxiSample::autoTrim(float alpha, float threshold, bool trimStart, bool trimEnd)) in maximilian.cpp to use int values.
 ```
         //int fadeSize=min((unsigned long)100, amplitudes.size());
-		int fadeSize = min(100, (int)amplitudes.size());
+	int fadeSize = min((unsigned long)100, (unsigned long)amplitudes.size());
 ```
 
 ### to fix 'float maxiIFFT::process(std::vector<float,std::allocator<float>> &,std::vector<float,std::allocator<float>> &,maxiIFFT::fftModes)'
